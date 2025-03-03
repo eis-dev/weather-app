@@ -1,5 +1,6 @@
 import Link from "next/link"
 
+import SearchBar from "@/components/sections/search-bar"
 import SelectUnits from "@/components/widgets/select-units"
 
 export default function Header() {
@@ -14,6 +15,10 @@ export default function Header() {
 
 				<div>
 					<SelectUnits />
+				</div>
+
+				<div>
+					<SearchBar />
 				</div>
 			</div>
 		</header>
