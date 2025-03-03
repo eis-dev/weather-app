@@ -1,4 +1,5 @@
 export { useGeonames } from "./useGeonames"
+export { useWeather } from "./useWeather"
 export { useCity } from "./useCity"
 export { useDebounce } from "./useDebounce"
 export { useClickOutside } from "./useClickOutside"
