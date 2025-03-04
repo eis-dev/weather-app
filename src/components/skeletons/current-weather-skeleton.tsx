@@ -16,7 +16,7 @@ export default function CurrentWeatherSkeleton() {
 			</div>
 
 			<div className="flex flex-col items-start gap-6 pl-2 pr-8 sm:px-2 py-4">
-				<p className="text-gray-300 text-xl sm:text-3xl font-bold">
+				<p className="text-gray-300 text-2xl sm:text-3xl font-bold">
 					<span className="text-gray-400">{city?.name}</span>
 					<span>, {city?.countryName}</span>
 				</p>
