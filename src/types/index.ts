@@ -18,40 +18,40 @@ export interface Geoname {
 	lng?: number | undefined
 }
 
-export interface WeatherData {
+export interface WeatherItem {
 	dt: number
 	main: {
 		temp: number
-		feels_like: number
+		humidity: number
 		temp_min: number
 		temp_max: number
-		pressure: number
-		sea_level: number
-		grnd_level: number
-		humidity: number
-		temp_kf: number
 	}
-	weather: {
-		id: number
-		main: string
-		description: string
-		icon: string
-	}[]
-	clouds: {
-		all: number
-	}
+	weather: [
+		{
+			id: number
+			main: string
+			description: string
+			icon: string
+		}
+	]
 	wind: {
 		speed: number
-		deg: number
-		gust: number
-	}
-	visibility: number
-	pop: number
-	rain?: {
-		"3h": number
-	}
-	sys: {
-		pod: string
 	}
 	dt_txt: string
+}
+
+export interface WeatherDataItem {
+	date: string
+	title: string
+	temp: number
+	humidity: number
+	windSpeed: number
+	icon: string | null
+	minTemp: number
+	maxTemp: number
+}
+
+export interface WeatherData {
+	current: WeatherDataItem | null
+	forecast: WeatherDataItem[]
 }

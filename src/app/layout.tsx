@@ -1,18 +1,15 @@
 import type { Metadata } from "next"
-import { Geist, Geist_Mono } from "next/font/google"
+import dynamic from "next/dynamic"
+import { Geist } from "next/font/google"
 
 import "./globals.css"
 
 import Providers from "@/providers"
-import Header from "@/components/shared/header"
+
+const Header = dynamic(() => import("@/components/shared/header"))
 
 const geistSans = Geist({
 	variable: "--font-geist-sans",
-	subsets: ["latin"]
-})
-
-const geistMono = Geist_Mono({
-	variable: "--font-geist-mono",
 	subsets: ["latin"]
 })
 
@@ -28,13 +25,15 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
-			<body
-				className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-			>
+			<body className={`${geistSans.variable} antialiased`}>
 				<Providers>
-					<Header />
+					<div className="min-h-screen flex flex-col justify-evenly items-center">
+						<div className="max-w-6xl w-full mx-auto flex flex-col gap-8 sm:gap-18 pt-12 pb-24 sm:pb-48 md:pb-64">
+							<Header />
 
-					<main>{children}</main>
+							<main>{children}</main>
+						</div>
+					</div>
 				</Providers>
 			</body>
 		</html>

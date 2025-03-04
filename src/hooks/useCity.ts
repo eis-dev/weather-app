@@ -1,6 +1,6 @@
-import { Geoname } from "@/types"
-
 import { useWeatherStore } from "@/store"
+
+import { Geoname } from "@/types"
 
 export const useCity = () => {
 	const city = useWeatherStore((state) => state.city)
